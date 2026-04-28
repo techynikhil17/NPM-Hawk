@@ -1,4 +1,8 @@
-const BASE = (import.meta.env.VITE_API_BASE || "") + "/api/v1";
+let envBase = import.meta.env.VITE_API_BASE || "";
+if (envBase && !envBase.startsWith("http")) {
+  envBase = "https://" + envBase;
+}
+const BASE = envBase + "/api/v1";
 
 async function apiFetch(url) {
   const res = await fetch(BASE + url);

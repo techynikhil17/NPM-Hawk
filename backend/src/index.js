@@ -15,7 +15,11 @@ import { logger } from "./utils/logger.js";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: ["http://localhost:5173", "http://localhost:4173"] }));
+const allowedOrigins = process.env.ALLOWED_ORIGIN
+  ? process.env.ALLOWED_ORIGIN.split(",").map(s => s.trim())
+  : ["http://localhost:5173", "http://localhost:4173"];
+
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
 
 const limiter = rateLimit({ windowMs: 60_000, max: 120, standardHeaders: true, legacyHeaders: false });

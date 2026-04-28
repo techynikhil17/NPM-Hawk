@@ -1,4 +1,5 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { api } from "../lib/api";
 
 export function useNpmUser(username) {
   const [data, setData]       = useState(null);
@@ -9,10 +10,9 @@ export function useNpmUser(username) {
     if (!username) { setData(null); return; }
     setLoading(true);
     setError(null);
-    fetch(`/api/v1/npm-user/${encodeURIComponent(username)}`)
-      .then(r => r.ok ? r.json() : r.json().then(e => Promise.reject(e.error)))
+    api.npmUser(username)
       .then(setData)
-      .catch(e => setError(typeof e === "string" ? e : "Failed to fetch npm user"))
+      .catch(e => setError(typeof e.message === "string" ? e.message : "Failed to fetch npm user"))
       .finally(() => setLoading(false));
   }, [username]);
 

@@ -20,6 +20,7 @@ export const api = {
   githubCommits: (owner, repo) => apiFetch(`/github/${owner}/${repo}/commits`),
   health: (name) => apiFetch(`/health/${encodeURIComponent(name)}`),
   security: (name) => apiFetch(`/security/${encodeURIComponent(name)}`),
+  npmUser: (username) => apiFetch(`/npm-user/${encodeURIComponent(username)}`),
   compare: (names) => apiFetch(`/compare?packages=${names.map(encodeURIComponent).join(",")}`),
   compareDownloads: (names, period = "last-month") =>
     apiFetch(`/compare/downloads?packages=${names.map(encodeURIComponent).join(",")}&period=${period}`),

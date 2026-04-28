@@ -16,8 +16,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const allowedOrigins = process.env.ALLOWED_ORIGIN
-  ? process.env.ALLOWED_ORIGIN.split(",").map(s => s.trim())
-  : ["http://localhost:5173", "http://localhost:4173"];
+  ? process.env.ALLOWED_ORIGIN.split(",").map(s => s.trim().replace(/\/$/, ""))
+  : "*"; // Fall back to allow all if not strictly configured
 
 app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());

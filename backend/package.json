@@ -1,0 +1,17 @@
+﻿{
+    "name":  "npm-hawk-backend",
+    "version":  "1.0.0",
+    "description":  "NPM Hawk API backend",
+    "main":  "src/index.js",
+    "type":  "module",
+    "scripts":  {
+                    "dev":  "node --watch src/index.js",
+                    "start":  "node src/index.js"
+                },
+    "dependencies":  {
+                         "cors":  "^2.8.5",
+                         "express":  "^4.19.2",
+                         "express-rate-limit":  "^7.4.1",
+                         "node-fetch":  "^3.3.2"
+                     }
+}

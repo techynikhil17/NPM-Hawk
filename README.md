@@ -8,7 +8,7 @@
 
 ## ◈ SYSTEM OVERVIEW
 
-Welcome to the **Hawk_OS**. Building software is easy; knowing exactly what's running in your dependency tree is the real superpower. 
+Welcome to the **NPM Hawk**. Building software is easy; knowing exactly what's running in your dependency tree is the real superpower. 
 
 **NPM Hawk** is a high-performance, full-stack monitoring dashboard designed for developers who want absolute visibility over their open-source footprint. With a sleek, Gen-Z aesthetic and a cinematic HUD interface, NPM Hawk doesn't just list packages—it acts as your personal AI assistant (think J.A.R.V.I.S. meets your friendly neighborhood developer), providing real-time telemetry, threat detection, and health diagnostics for your entire npm ecosystem.
 
@@ -56,7 +56,7 @@ Built with a modern, high-speed stack designed for rapid deployment and edge-rea
 
 ## 🚀 DEPLOYMENT PROTOCOL
 
-To run the Hawk_OS locally on your own mainframe:
+To run NPM Hawk locally on your own mainframe:
 
 ### 1. Initialize the Backend
 ```bash

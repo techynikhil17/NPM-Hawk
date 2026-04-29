@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { useNpmUser } from "../hooks/useNpmUser.js";
 
 function Section({ title, children }) {
@@ -33,7 +33,7 @@ function LinkAccountPanel({ onLink }) {
       {data && (
         <div style={{ background:"var(--bg-surface)", borderRadius:10, padding:14, border:"1px solid var(--border-bright)" }}>
           <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:10 }}>
-            <div style={{ width:36, height:36, borderRadius:"50%", background:"linear-gradient(135deg,var(--accent),var(--purple))", display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, fontWeight:800, color:"#fff" }}>{query[0].toUpperCase()}</div>
+            <div style={{ width:36, height:36, borderRadius:"50%", background:"linear-gradient(135deg,var(--accent),var(--purple))", display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, fontWeight:800, color:"#fff" }}>{query ? query[0].toUpperCase() : ""}</div>
             <div>
               <div style={{ fontWeight:700, color:"var(--text-primary)" }}>{query}</div>
               <div style={{ fontSize:12, color:"var(--text-muted)" }}>{data.packageCount} packages on npm</div>
